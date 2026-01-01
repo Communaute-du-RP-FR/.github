@@ -148,8 +148,7 @@ Site web officiel de la communauté avec backend API.
 - Python 3.10+ et [uv](https://docs.astral.sh/uv/) pour la gestion des environnements/dépendances des bots
 - Node.js 18+ (pour le site web)
 - Git
-- Un token de bot Discord
-- PostgreSQL ou SQLite (selon le projet)
+- PostgreSQL et SQLite (selon le bot)
 
 ### Installation des Bots Discord
 
