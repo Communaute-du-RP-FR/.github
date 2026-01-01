@@ -165,12 +165,8 @@ uv venv .venv
 # 3. Installer les dépendances
 uv pip install -r requirements.txt
 
-# 4. Configuration
-cp .env.example .env
-# Éditer .env avec vos tokens et configurations
-
-# 5. Lancer le bot (uv active l'environnement automatiquement)
-uv run src/main.py
+# 4. Configurer le service systemd (voir section "Exécution comme service")
+# Les variables d'environnement sont chargées via EnvironmentFile dans le service
 ```
 
 #### Configuration avec PyProject (Modmail, Restore)
@@ -188,23 +184,16 @@ uv sync  # utilise pyproject.toml et uv.lock si présent
 # OU (fallback) installer depuis requirements.txt
 uv pip install -r requirements.txt
 
-# 4. Configuration
-cp .env.example .env
-# Éditer .env
-
-# 5. Pour Restore : préparer la base
-uv run scripts/create_db.py
-
-# 6. Lancer le bot
-uv run -m modmail   # pour Modmail
-uv run -m restore   # pour Restore
+# 4. Configurer le service systemd (voir section "Exécution comme service")
+# Les variables d'environnement sont chargées via EnvironmentFile dans le service
 ```
 
 ### Exécution comme service (systemd)
 
 Les quatre bots (Liste-du-RP-FR, Moderator, Modmail, Restore) tournent en service systemd. Exemple pour Liste-du-RP-FR :
 
-1) Placer le fichier d'environnement (ex. `/etc/restore/liste.env`).
+1) Créer le fichier d'environnement `/etc/liste/liste.env` avec les variables nécessaires (voir pour chaque bot dans leur README respectif).
+
 2) Créer le service `/etc/systemd/system/liste.service` :
 
 ```ini
