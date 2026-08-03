@@ -41,7 +41,7 @@ Bot de modération avancée avec système de vérification et gestion de tickets
 Système de messagerie privée entre utilisateurs et équipe de modération.
 
 **Fonctionnalités :**
-- Conversations privées user ↔️ Administration
+- Conversations privées entre utilisateur et administration
 - Historique et archivage
 - Notifications
 
@@ -76,6 +76,16 @@ Bibliothèque partagée de fonctions utilitaires pour tous les bots.
 - Configuration centralisée
 
 **Technologies :** Python
+
+---
+
+#### [policies](https://github.com/Communaute-du-RP-FR/policies)
+Politique de confidentialité et conditions d'utilisation de chacun des bots.
+
+**Contenu :**
+- Politique de confidentialité des données des quatres bots
+- Conditions d'utilisation des quatres bots
+- Liens vers les versions publiées
 
 ---
 
@@ -132,30 +142,10 @@ Système de sauvegarde et restauration PostgreSQL avec chiffrement et stockage d
 ### Prérequis Généraux
 
 - Python 3.10+ et [uv](https://docs.astral.sh/uv/) pour la gestion des environnements/dépendances des bots
-- Node.js 18+ (pour le site web)
 - Git
-- PostgreSQL et SQLite (selon le bot)
+- PostgreSQL
 
-### Installation des Bots Discord
-
-#### Configuration Standard (Liste-du-RP-FR, Moderator)
-
-```bash
-# 1. Cloner le repository
-git clone https://github.com/Communaute-du-RP-FR/[NOM-DU-BOT].git
-cd [NOM-DU-BOT]
-
-# 2. Créer l'environnement avec uv
-uv venv .venv
-
-# 3. Installer les dépendances
-uv pip install -r requirements.txt
-
-# 4. Configurer le service systemd (voir section "Exécution comme service")
-# Les variables d'environnement sont chargées via EnvironmentFile dans le service
-```
-
-#### Configuration avec PyProject (Modmail, Restore)
+### Installation des Bots Discord 
 
 ```bash
 # 1. Cloner le repository
@@ -167,8 +157,6 @@ uv venv .venv
 
 # 3. Installer les dépendances depuis pyproject
 uv sync  # utilise pyproject.toml et uv.lock si présent
-# OU (fallback) installer depuis requirements.txt
-uv pip install -r requirements.txt
 
 # 4. Configurer le service systemd (voir section "Exécution comme service")
 # Les variables d'environnement sont chargées via EnvironmentFile dans le service
@@ -216,7 +204,7 @@ sudo systemctl start liste.service
 sudo systemctl status liste.service
 ```
 
-Adapter pour les autres bots en remplaçant les chemins et noms.
+Le cas de chaque bot est détaillé dans son README propre.
 
 ### Installation du Package Utils
 
@@ -228,28 +216,6 @@ uv pip install git+https://github.com/Communaute-du-RP-FR/utils.git
 git clone https://github.com/Communaute-du-RP-FR/utils.git
 cd utils
 uv pip install -e .
-```
-
-### Installation du Website
-
-```bash
-# 1. Cloner le repository
-git clone https://github.com/Communaute-du-RP-FR/Website.git
-cd Website
-
-# 2. Frontend (Next.js)
-npm install
-cp .env.example .env.local
-# Éditer .env.local avec vos configurations
-npm run dev
-
-# 3. Backend (FastAPI) - dans un autre terminal
-cd backend
-uv venv .venv
-uv pip install -r requirements.txt
-cp .env.example .env
-# Éditer .env
-uv run uvicorn app.main:app --reload
 ```
 
 ### Configuration de la Base de Données
@@ -288,47 +254,6 @@ Ensuite lancer `/init-db` depuis le bot Restore pour créer les tables et les fe
 - `refactor`: Refactorisation du code
 - `test`: Ajout/modification de tests
 - `chore`: Tâches de maintenance
-
-**Branches :**
-```bash
-# Créer une branche pour chaque fonctionnalité
-git checkout -b feature/nom-de-la-fonctionnalite
-git checkout -b fix/nom-du-bug
-git checkout -b docs/mise-a-jour-readme
-```
-
-### Tests
-
-```bash
-# Pour les projets avec pytest (Modmail, Restore)
-uv run pytest
-uv run pytest -v  # mode verbose
-uv run pytest --cov  # avec coverage
-```
-
-### Documentation
-
-- Maintenir le README à jour
-- Documenter les fonctions complexes avec docstrings
-- Pour Modmail/Restore : générer la doc Sphinx
-  ```bash
-  cd docs
-  uv run sphinx-build -b html source build/html
-  ```
-
-### Mise à Jour des Dépendances
-
-```bash
-# Vérifier les dépendances obsolètes
-uv pip list --outdated
-
-# Mettre à jour une dépendance spécifique
-uv pip install --upgrade nom-package
-
-# Mettre à jour requirements.txt
-uv pip freeze > requirements.txt
-```
-
 ---
 
 ## Contact & Support
