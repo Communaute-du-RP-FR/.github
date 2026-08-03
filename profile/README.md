@@ -127,20 +127,6 @@ Système de sauvegarde et restauration PostgreSQL avec chiffrement et stockage d
 
 ---
 
-#### [Website](https://github.com/Communaute-du-RP-FR/Website)
-Site web officiel de la communauté avec backend API.
-
-**Fonctionnalités :**
-- Site Next.js moderne
-- Authentification Discord OAuth
-- API REST (FastAPI)
-- Base de données
-- Design responsive
-
-**Technologies :** Next.js, TypeScript, Python (FastAPI), TailwindCSS
-
----
-
 ## Installation
 
 ### Prérequis Généraux
