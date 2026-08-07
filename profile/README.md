@@ -1,112 +1,117 @@
 # Communauté du RP FR
 
-> Écosystème complet de bots Discord et outils pour le serveur discord Communauté du RP FR
+> Complete ecosystem of Discord bots and tools for the `Communauté du RP FR` Discord server
 
-Bienvenue dans l'organisation GitHub de la Communauté du RP FR ! Nous développons et maintenons plusieurs bots Discord et outils pour faciliter la gestion du serveur.
+Welcome to the `Communauté du RP FR` GitHub organization! We develop and maintain several Discord bots and tools to help manage the server.
 
-## Nos Projets
+## Our Projects
 
-### Bots Discord
+### Discord Bots
 
 #### [Liste-du-RP-FR](https://github.com/Communaute-du-RP-FR/Liste-du-RP-FR)
-Bot principal de gestion de la liste des serveurs RP.
+Main bot for managing the roleplay server listing.
 
-**Fonctionnalités :**
-- Inscription et gestion des serveurs RP
-- Recherche de serveurs par critères
-- Gestion des membres et joueurs
-- Système de boost
-- Statistiques et classements
+**Features:**
+- Roleplay server registration and management
+- Server search by criteria
+- Member and player management
+- Boost system
+- Statistics and leaderboards
 
-**Technologies :** Python, discord.py
+**Technologies:** Python, discord.py
+**Documentation:** Sphinx
 
 ---
 
 #### [Moderator](https://github.com/Communaute-du-RP-FR/Moderator)
-Bot de modération avancée avec système de vérification et gestion de tickets.
+Advanced moderation bot with a verification system and ticket management.
 
-**Fonctionnalités :**
-- Outils de modération complets
-- Système de tickets
-- Vérification automatisée des utilisateurs
-- Mini-jeux
-- Gestion de listes et configurations
-- Tâches automatiques (loops)
+**Features:**
+- Comprehensive moderation tools
+- Ticket system
+- Automated user verification
+- Mini-games
+- List and configuration management
+- Automated tasks (loops)
 
-**Technologies :** Python, discord.py
+**Technologies:** Python, discord.py
+**Documentation:** Sphinx
 
 ---
 
 #### [Modmail](https://github.com/Communaute-du-RP-FR/Modmail)
-Système de messagerie privée entre utilisateurs et équipe de modération.
+Private messaging system between users and the moderation team.
 
-**Fonctionnalités :**
-- Conversations privées entre utilisateur et administration
-- Historique et archivage
+**Features:**
+- Private conversations between a user and staff
+- History and archiving
 - Notifications
 
-**Technologies :** Python, discord.py
-**Documentation :** Sphinx
+**Technologies:** Python, discord.py
+**Documentation:** Sphinx
 
 ---
 
 #### [Restore](https://github.com/Communaute-du-RP-FR/Restore)
-Bot de sauvegarde et restauration de serveurs Discord.
+Discord server backup and restoration bot.
 
-**Fonctionnalités :**
-- Restauration partielle de la base de données
-- Restauration de configurations
-- Base de données SQL
+**Features:**
+- Partial database restoration
+- Configuration restoration
+- SQL database
 
-**Technologies :** Python, discord.py, SQL
-**Documentation :** Sphinx
+**Technologies:** Python, discord.py, SQL
+**Documentation:** Sphinx
 
 ---
 
-### Utilitaires
+### Utilities
 
 #### [utils](https://github.com/Communaute-du-RP-FR/utils)
-Bibliothèque partagée de fonctions utilitaires pour tous les bots.
+Shared library of utility functions for all bots.
 
-**Contenu :**
-- Client Discord personnalisé
-- Gestionnaire de base de données
-- Vues génériques et composants UI
-- Utilitaires de texte et émotes
-- Configuration centralisée
+**Contents:**
+- Custom Discord client
+- Database manager
+- Generic views and UI components
+- Text and emote utilities
+- Centralized configuration
 
-**Technologies :** Python
+**Technologies:** Python
+**Documentation:** Sphinx
 
 ---
 
 #### [policies](https://github.com/Communaute-du-RP-FR/policies)
-Politique de confidentialité et conditions d'utilisation de chacun des bots.
+Privacy policy and terms of use for each bot.
 
-**Contenu :**
-- Politique de confidentialité des données des quatres bots
-- Conditions d'utilisation des quatres bots
-- Liens vers les versions publiées
+**Contents:**
+- Data privacy policy for all four bots
+- Terms of use for all four bots
+- Links to published versions
 
 ---
 
 #### [alerts](https://github.com/Communaute-du-RP-FR/alerts)
-CLI Python pour envoyer des notifications de statut de service sur Discord.
+Python CLI for sending service status notifications to Discord.
 
-**Fonctionnalités :**
-- Notifications formatées sur Discord via webhooks
-- Horodatage automatique
-- Mention @everyone pour notifier les Admins
-- Interface propre avec composants Discord natifs
+**Features:**
+- Formatted Discord notifications via webhooks
+- Automatic timestamping
+- @everyone mention to notify Admins
+- Clean interface using native Discord components
 
-**Technologies :** Python, discord.py, requests
-**Documentation :** Sphinx
+**Technologies:** Python, discord.py, requests
+**Documentation:** Sphinx
 
-**Installation :**
+**Installation:**
+
 ```bash
 uv pip install git+https://github.com/Communaute-du-RP-FR/alerts.git
 ```
 
-**Usage :**
+**Usage:**
+
 ```bash
 export DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/..."
 alerts my_service STARTED
@@ -115,23 +120,24 @@ alerts my_service STARTED
 ---
 
 #### [backups](https://github.com/Communaute-du-RP-FR/backups)
-Système de sauvegarde et restauration PostgreSQL avec chiffrement et stockage distant.
+PostgreSQL backup and restoration system with encryption and remote storage.
 
-**Fonctionnalités :**
-- Sauvegardes chiffrées avec [age encryption](https://github.com/FiloSottile/age)
-- Dumps PostgreSQL compressés (format custom, niveau 9)
-- Stockage distant via SCP
-- Nettoyage automatique (conserve les 30 dernières sauvegardes)
-- Restauration sécurisée avec options clean et if-exists
+**Features:**
+- Encrypted backups with [age encryption](https://github.com/FiloSottile/age)
+- Compressed PostgreSQL dumps (custom format, level 9)
+- Remote storage via SCP
+- Automatic cleanup (keeps the last 30 backups)
+- Secure restoration with clean and if-exists options
 
-**Technologies :** Bash, PostgreSQL, age encryption
+**Technologies:** Bash, PostgreSQL, age encryption
 
-**Usage :**
+**Usage:**
+
 ```bash
-# Créer une sauvegarde
+# Create a backup
 ./scripts/backup.sh
 
-# Restaurer depuis une sauvegarde
+# Restore from a backup
 ./scripts/restore.sh backup-file.dump.age
 ```
 
@@ -139,36 +145,36 @@ Système de sauvegarde et restauration PostgreSQL avec chiffrement et stockage d
 
 ## Installation
 
-### Prérequis Généraux
+### General Prerequisites
 
-- Python 3.10+ et [uv](https://docs.astral.sh/uv/) pour la gestion des environnements/dépendances des bots
+- Python 3.10+ and [uv](https://docs.astral.sh/uv/) for managing the bots' environments/dependencies
 - Git
 - PostgreSQL
 
-### Installation des Bots Discord 
+### Installing the Discord Bots
 
 ```bash
-# 1. Cloner le repository
-git clone https://github.com/Communaute-du-RP-FR/[NOM-DU-BOT].git
-cd [NOM-DU-BOT]
+# 1. Clone the repository
+git clone https://github.com/Communaute-du-RP-FR/[BOT-NAME].git
+cd [BOT-NAME]
 
-# 2. Créer l'environnement avec uv
+# 2. Create the environment with uv
 uv venv .venv
 
-# 3. Installer les dépendances depuis pyproject
-uv sync  # utilise pyproject.toml et uv.lock si présent
+# 3. Install dependencies from pyproject
+uv sync  # uses pyproject.toml and uv.lock if present
 
-# 4. Configurer le service systemd (voir section "Exécution comme service")
-# Les variables d'environnement sont chargées via EnvironmentFile dans le service
+# 4. Configure the systemd service (see "Running as a service" section)
+# Environment variables are loaded via EnvironmentFile in the service
 ```
 
-### Exécution comme service (systemd)
+### Running as a Service (systemd)
 
-Les quatre bots (Liste-du-RP-FR, Moderator, Modmail, Restore) tournent en service systemd. Exemple pour Liste-du-RP-FR :
+All four bots (Liste-du-RP-FR, Moderator, Modmail, Restore) run as systemd services. Example for Liste-du-RP-FR:
 
-1) Créer le fichier d'environnement `/etc/liste/liste.env` avec les variables nécessaires (voir pour chaque bot dans leur README respectif).
+1) Create the environment file `/etc/liste/liste.env` with the required variables (see each bot's own README for details).
 
-2) Créer le service `/etc/systemd/system/liste.service` :
+2) Create the service file `/etc/systemd/system/liste.service`:
 
 ```ini
 [Unit]
@@ -195,7 +201,7 @@ CapabilityBoundingSet=
 WantedBy=multi-user.target
 ```
 
-3) Activer et démarrer :
+3) Enable and start:
 
 ```bash
 sudo systemctl daemon-reload
@@ -204,25 +210,25 @@ sudo systemctl start liste.service
 sudo systemctl status liste.service
 ```
 
-Le cas de chaque bot est détaillé dans son README propre.
+Each bot's specifics are detailed in its own README.
 
-### Installation du Package Utils
+### Installing the Utils Package
 
 ```bash
-# Option 1 : Installation depuis le repo
+# Option 1: Install from the repo
 uv pip install git+https://github.com/Communaute-du-RP-FR/utils.git
 
-# Option 2 : Installation locale pour développement
+# Option 2: Local install for development
 git clone https://github.com/Communaute-du-RP-FR/utils.git
 cd utils
 uv pip install -e .
 ```
 
-### Configuration de la Base de Données
+### Database Configuration
 
-**PostgreSQL (Restore) avant `/init-db`**
+**PostgreSQL (Restore) before `/init-db`**
 
-Pour utiliser `/init-db` (commande du bot Restore), il faut d'abord créer la base et donner les droits à l'utilisateur `debian` pour une connexion socket sans mot de passe :
+To use `/init-db` (a Restore bot command), you first need to create the database and grant the `debian` user passwordless socket-connection privileges:
 
 ```bash
 sudo -u postgres psql <<'SQL'
@@ -232,38 +238,38 @@ GRANT ALL PRIVILEGES ON DATABASE listerp_db TO debian;
 ALTER DATABASE listerp_db OWNER TO debian;
 SQL
 
-# Assurer dans pg_hba.conf une entrée locale trust ou peer pour l'utilisateur debian sur la base listerp_db
-# Exemple :
+# Make sure pg_hba.conf has a local trust or peer entry for the debian user on the listerp_db database
+# Example:
 # local   listerp_db   debian   peer
 
-# Recharger PostgreSQL après modification
+# Reload PostgreSQL after making changes
 sudo systemctl reload postgresql
 ```
 
-Ensuite lancer `/init-db` depuis le bot Restore pour créer les tables et les feed.
+Then run `/init-db` from the Restore bot to create the tables and seed data.
 
 ---
 
 ### Git & GitHub
 
-**Types de commits :**
-- `feat`: Nouvelle fonctionnalité
-- `fix`: Correction de bug
+**Commit types:**
+- `feat`: New feature
+- `fix`: Bug fix
 - `doc`: Documentation
-- `style`: Formatage, pas de changement de code
-- `refactor`: Refactorisation du code
-- `test`: Ajout/modification de tests
-- `chore`: Tâches de maintenance
+- `style`: Formatting, no code change
+- `refactor`: Code refactoring
+- `test`: Adding/modifying tests
+- `chore`: Maintenance tasks
 ---
 
 ## Contact & Support
 
-- Discord : [Rejoindre le serveur](https://discord.gg/commurp)
-- Issues : Utiliser le système d'issues de chaque repository
-- Email : virgile.devolder2@gmail.com ou martin.devolder2@gmail.com
+- Discord: [Join the server](https://discord.gg/commurp)
+- Issues: Use each repository's issue tracker
+- Email: virgile.devolder2@gmail.com or martin.devolder2@gmail.com
 
 ---
 
-## Licence
+## License
 
-Chaque projet a sa propre licence (généralement MIT). Consultez le fichier LICENSE de chaque repository.
+Each project has its own license (generally MIT). Check the LICENSE file in each repository.
